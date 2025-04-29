@@ -69,7 +69,7 @@ ul li a {
     display: block;
     padding: .9rem .5rem;
     text-align: right;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
     text-decoration: none;
     color: $primaryColor;
 }
@@ -86,20 +86,22 @@ ul li a {
 
 .moveOver>.content{
     transform: translateX(-180px); // move the content sideways
-    transition: transform 500ms ease; // animates the slide
+    transition: transform .5s ease; // animates the slide
 }
 
-
-
+#pageWrapper {
+    position: relative;
+    overflow-x: hidden;
+}
 
 
 /* --------------------------- MAIN --------------------------- */
 main {
     h1 {
-        padding: 1rem $gutter.5rem $gutter;
+        padding: 1rem $gutter .5rem $gutter;
         font-size: 1.5rem;
         color: $secondaryColor;
-        font-weight: $lightWeight
+        font-weight: $lightWeight;
     }
     p {
         padding: .5rem $gutter;
