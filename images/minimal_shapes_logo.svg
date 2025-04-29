@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimal geometric travel logo -->
+  <g fill="#000000">
+    <!-- Triangle (mountain) -->
+    <path d="M15,30 L25,15 L35,30 Z" />
+    
+    <!-- Horizontal line (horizon/path) -->
+    <rect x="10" y="33" width="30" height="2" />
+  </g>
+</svg> 

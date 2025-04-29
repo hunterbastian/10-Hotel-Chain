@@ -73,7 +73,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -308,8 +309,6 @@ html {
 
 /*  Apply a natural box layout model to all elements  */
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -328,7 +327,8 @@ body {
 header {
   display: grid;
   grid-template-columns: 50px auto 44px;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   align-items: center;
   padding: 0.5rem 10px;
 }
@@ -494,7 +494,8 @@ footer {
   }
   #hotelplacement img {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 6px;
   }
   #hotelplacement h2 {
@@ -556,5 +557,3 @@ footer {
     margin-top: 0;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */
