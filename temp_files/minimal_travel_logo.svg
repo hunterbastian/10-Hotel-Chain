@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Abstract minimalistic travel logo -->
+  <g fill="#000000">
+    <!-- Circular base with diagonal element suggesting movement/travel -->
+    <circle cx="25" cy="25" r="12" />
+    <circle cx="25" cy="25" r="6" fill="#FFFFFF" />
+    <path d="M25,25 L40,15" stroke="#FFFFFF" stroke-width="2.5" />
+  </g>
+</svg> 

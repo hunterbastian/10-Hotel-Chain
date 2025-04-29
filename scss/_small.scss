@@ -31,14 +31,12 @@ header {
     span {
         font-size: 1.6rem;
         font-weight: $lightWeight;
-        color: $primaryColor;
+        color: #000000;
     }
 } // end header
 
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-
-
 #hamburgerBtn {
     width: 44px;
     height: 44px;
@@ -53,7 +51,7 @@ header {
 } // end button
 
 nav {
-    background-color: #f7f7f7;
+    background-color: #fafafa;
     width: 180px;
     position: absolute;
     top: 0;
@@ -69,15 +67,17 @@ ul li a {
     display: block;
     padding: .9rem .5rem;
     text-align: right;
-    border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    color: $primaryColor;
-}
-    ul li a:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-weight: 400;
     }
-    li.active a:hover {
-        color: $secondaryColor;
+    ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+    li.active a {
+        color: #d5001c; /* Porsche Guards Red */
+        font-weight: 500;
     }
 } // end nav
 .moveOver #hamburgerBtn::before {
@@ -100,7 +100,7 @@ main {
     h1 {
         padding: 1rem $gutter .5rem $gutter;
         font-size: 1.5rem;
-        color: $secondaryColor;
+        color: #d5001c; /* Porsche Guards Red */
         font-weight: $lightWeight;
     }
     p {
@@ -112,16 +112,85 @@ main {
 
 
 
+
+
+
+#hotelplacement {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 $gutter;
+  
+  section {
+    display: grid;
+    grid-template-areas: "title" "img" "address" "phone";
+    gap: 0.5rem;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease-out;
+    
+    &:hover {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+  }
+  
+  img {
+    grid-area: img;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 0.25rem;
+  }
+  
+  h2 {
+    grid-area: title;
+    margin: 0 0 0.5rem 0;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  p.address {
+    grid-area: address;
+    margin: 0.5rem 0;
+    font-style: normal;
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.4;
+    padding-left: 6px;
+    border-left: 2px solid #e1e1e1;
+  }
+  
+  p.phone {
+    grid-area: phone;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #8e8e93; /* Apple's secondary text color */
+    line-height: 1.4;
+  }
+} // end hotel placement parent
+
+
+
+
+
+
+
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-    background-color: $primaryColor
+    background-color: #000000;
+    padding: 1rem 0;
 } // end footer wrapper
 
 footer {
-    font-size: .85rem;
-    padding: 1rem $gutter;
-    color: $greyColor;
+    font-size: 0.7rem;
+    color: #999999;
     text-align: center;
-    line-height: $leading;
-    a {color: $greyColor;}
 }// end footer

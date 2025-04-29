@@ -73,8 +73,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -309,33 +308,34 @@ html {
 
 /*  Apply a natural box layout model to all elements  */
 * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 /* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Spline Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
   min-width: 320px;
 }
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 header {
   display: grid;
   grid-template-columns: 50px auto 44px;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   align-items: center;
   padding: 0.5rem 10px;
 }
 header span {
   font-size: 1.6rem;
   font-weight: 300;
-  color: #1d295f;
+  color: #000000;
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
@@ -353,7 +353,7 @@ header span {
 }
 
 nav {
-  background-color: #f7f7f7;
+  background-color: #fafafa;
   width: 180px;
   position: absolute;
   top: 0;
@@ -370,15 +370,17 @@ nav ul li a {
   display: block;
   padding: 0.9rem 0.5rem;
   text-align: right;
-  border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  color: #1d295f;
+  color: #333;
+  font-weight: 400;
 }
 nav ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.03);
 }
-nav li.active a:hover {
-  color: #7c1d47;
+nav li.active a {
+  color: #d5001c; /* Porsche Guards Red */
+  font-weight: 500;
 }
 
 .moveOver #hamburgerBtn::before {
@@ -399,7 +401,7 @@ nav li.active a:hover {
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
-  color: #7c1d47;
+  color: #d5001c; /* Porsche Guards Red */
   font-weight: 300;
 }
 main p {
@@ -408,24 +410,98 @@ main p {
   line-height: 150%;
 }
 
+#hotelplacement {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 10px;
+}
+#hotelplacement section {
+  display: grid;
+  grid-template-areas: "title" "img" "address" "phone";
+  gap: 0.5rem;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease-out;
+}
+#hotelplacement section:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+#hotelplacement img {
+  grid-area: img;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 0.25rem;
+}
+#hotelplacement h2 {
+  grid-area: title;
+  margin: 0 0 0.5rem 0;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+}
+#hotelplacement p.address {
+  grid-area: address;
+  margin: 0.5rem 0;
+  font-style: normal;
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.4;
+  padding-left: 6px;
+  border-left: 2px solid #e1e1e1;
+}
+#hotelplacement p.phone {
+  grid-area: phone;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #8e8e93; /* Apple's secondary text color */
+  line-height: 1.4;
+}
+
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #1d295f;
+  background-color: #000000;
+  padding: 1rem 0;
 }
 
 footer {
-  font-size: 0.85rem;
-  padding: 1rem 10px;
-  color: #ccc;
+  font-size: 0.7rem;
+  color: #999999;
   text-align: center;
-  line-height: 150%;
-}
-footer a {
-  color: #ccc;
 }
 
 @media only screen and (min-width: 35rem) {
   /* NAVIGATION STUFF GOES HERE  */
+  /* HOTEL CARDS */
+  #hotelplacement {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  #hotelplacement section {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: "img title" "img address" "img phone";
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+  #hotelplacement img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  #hotelplacement h2 {
+    align-self: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
 }
 @media only screen and (min-width: 64rem) {
   header, nav, main {
@@ -433,4 +509,52 @@ footer a {
     margin: auto;
   }
   /* NAVIGATION STUFF GOES HERE  */
+  #hamburgerBtn {
+    display: none;
+  }
+  .moveOver > .content {
+    transform: translateX(0px);
+  }
+  nav {
+    background-color: transparent;
+    position: static;
+    transform: translateX(0);
+    width: auto;
+  }
+  nav ul {
+    display: flex;
+    margin-left: 10px;
+  }
+  nav ul li a {
+    padding: 0.6rem 1.5rem;
+    border: none;
+  }
+  #navWrapper {
+    background-color: #fafafa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  /* HOTEL CARDS */
+  #hotelplacement {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  #hotelplacement section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "img title" "img address" "img phone";
+    gap: 0.5rem;
+    align-items: start;
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+  #hotelplacement img {
+    grid-area: img;
+    border-radius: 6px;
+  }
+  #hotelplacement h2 {
+    margin-top: 0;
+  }
 }
+
+/*# sourceMappingURL=styles.css.map */

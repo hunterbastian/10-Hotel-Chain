@@ -4,3 +4,56 @@ header, nav, main {
 }
 
 /* NAVIGATION STUFF GOES HERE  */
+#hamburgerBtn {
+    display: none;
+}
+.moveOver>.content{
+    transform: translateX(0px);
+}
+nav {
+    background-color: transparent;
+    position: static;
+    transform: translateX(0);
+    width: auto;
+    ul {
+        display: flex;
+        margin-left: $gutter;
+    } // end ul
+    ul li a {
+        padding: .6rem 1.5rem;
+        border: none;
+    }   
+} // end nav
+#navWrapper {
+    background-color: #fafafa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* HOTEL CARDS */
+#hotelplacement {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "img title"
+            "img address"
+            "img phone";
+        gap: 0.5rem;
+        align-items: start;
+        background-color: #ffffff;
+        padding: 1.25rem;
+        border-radius: 8px;
+    }
+    
+    img {
+        grid-area: img;
+        border-radius: 6px;
+    }
+    
+    h2 {
+        margin-top: 0;
+    }
+}
